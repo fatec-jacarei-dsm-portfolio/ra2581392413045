@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio – Nicolas Aquino</title>
+  <meta name="description" content="Portfólio acadêmico – projetos da faculdade" />
+  <style>
+    :root{
+      --bg:#0C2E3F;
+      --bg-alt:#0f3549;
+      --text:#eaf2f6;
+      --muted:#8fa9b7;
+      --brand:#5D84A1;
+      --highlight:#5580B5;
+      --line:#17475f;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Inter", system-ui, sans-serif;
+      line-height:1.6;
+    }
+    .container{max-width:960px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:40px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+    }
+    .logo{
+      width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),var(--highlight));
+      font-weight:700;font-size:20px;color:#fff;
+    }
+    h1{font-size:28px;font-weight:700}
+    .subtitle{font-size:14px;color:var(--muted)}
+
+    nav a{
+      color:var(--text);text-decoration:none;margin-left:20px;font-weight:500;transition:.2s;
+    }
+    nav a:hover{color:var(--highlight)}
+
+    .section-title{
+      font-size:18px;font-weight:600;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:6px;
+    }
+
+    .projects{display:grid;gap:20px}
+    .card{
+      background:var(--bg-alt);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .card:hover{transform:translateY(-3px);border-color:var(--highlight)}
+    .card h3{margin-bottom:6px;font-size:20px;font-weight:600}
+    .card p{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .chip{background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:500}
+    .links{display:flex;gap:12px}
+    .link{padding:8px 14px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:.2s}
+    .site{background:var(--highlight);color:#fff}
+    .site:hover{background:#3b6b9e}
+    .github{border:1px solid var(--highlight);color:var(--highlight)}
+    .github:hover{background:var(--highlight);color:#fff}
+    .soon{opacity:.6;cursor:not-allowed}
+
+    footer{
+      margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px
+    }
+    .social{display:flex;gap:12px}
+    .social a{color:var(--text);text-decoration:none;font-size:14px;border:1px solid var(--line);padding:6px 10px;border-radius:8px;transition:.2s}
+    .social a:hover{border-color:var(--highlight);color:var(--highlight)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h1>Nicolas Aquino</h1>
+          <div class="subtitle">Portfólio Acadêmico • DSM – FATEC Jacareí</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section id="projetos">
+      <div class="section-title">Projetos</div>
+      <div class="projects">
+
+        <article class="card">
+          <h3>HardStop — Aprendizado de Scrum</h3>
+          <p>Projeto acadêmico focado em vivenciar práticas ágeis e Scrum no desenvolvimento de software.</p>
+          <div class="chips">
+            <span class="chip">Scrum</span>
+            <span class="chip">Gestão Ágil</span>
+          </div>
+          <div class="links">
+            <a class="link github" href="https://github.com/Nickaqui/hardstop" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>VitalU — Nutrição & TMB</h3>
+          <p>Cálculo de TMB (Harris-Benedict), IMC e metas nutricionais.</p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Redux Toolkit</span>
+          </div>
+          <div class="links">
+            <a class="link site" href="https://vital-u.vercel.app/" target="_blank">Site</a>
+            <a class="link github" href="https://github.com/Steel-Hard/VitalU" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>LabWind — Dashboard Meteorológico</h3>
+          <p>Dashboard para dados do Lago de Furnas com cards dinâmicos e alertas.</p>
+          <div class="chips">
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Tailwind</span>
+          </div>
+          <div class="links">
+            <a class="link site" href="https://labwind.vercel.app/" target="_blank">Site</a>
+            <a class="link github" href="https://github.com/Steel-Hard/LabWind" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Projeto 4° Semestre</h3>
+          <p>Projeto em desenvolvimento ao longo do 4° semestre, com previsão de publicação no fim do ano.</p>
+          <div class="chips">
+            <span class="chip">Em breve</span>
+          </div>
+          <div class="links">
+            <span class="link github soon">Em breve</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="section-title">Contato</div>
+      <footer>
+        <small>© <span id="year"></span> Nicolas Aquino</small>
+        <div class="social">
+          <a href="https://github.com/Nickaqui" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/nicolas-aquino" target="_blank">LinkedIn</a>
+          <a href="mailto:nicolasjdeaquino@hotmail.com">E-mail</a>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
