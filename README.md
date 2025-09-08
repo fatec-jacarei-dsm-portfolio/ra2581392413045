@@ -1,9 +1,8 @@
-3. Atualizar o ./README.md (da pasta raiz) com esse template:
 # Portfólio de Projetos - Fatec Jacareí
-### Aluno: [nome do aluno]
+### Aluno: Nicolas José de Aquino
 ### Curso: Desenvolvimento de Software Multiplataforma
-### Turma: [1o. ou 2o.] Semestre de 202[x]
- 
+### Turma: 1°Semestre de 2024
+
 ---
 
 ### Portfólio Online  
