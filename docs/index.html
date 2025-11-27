@@ -47,6 +47,45 @@
       font-size:18px;font-weight:600;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:6px;
     }
 
+    .presentation{
+      display:flex;gap:24px;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;
+    }
+    .photo{
+      width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid var(--line);
+      background:linear-gradient(135deg,var(--brand),var(--highlight));
+      display:block;
+    }
+    .presentation-text{
+      flex:1;min-width:250px;
+    }
+    .presentation-text h2{font-size:24px;margin-bottom:12px}
+    .presentation-text p{color:var(--muted);line-height:1.8}
+
+    .areas{
+      display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin-bottom:40px;
+    }
+    .area-card{
+      background:var(--bg-alt);border:1px solid var(--line);border-radius:12px;padding:16px;
+    }
+    .area-card h3{font-size:16px;margin-bottom:8px;color:var(--highlight)}
+    .area-card p{color:var(--muted);font-size:14px;line-height:1.6}
+
+    .other-info{
+      background:var(--bg-alt);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:40px;
+    }
+    .other-info p{color:var(--muted);line-height:1.8;margin-bottom:12px}
+    .other-info p:last-child{margin-bottom:0}
+
+    .project-category{
+      margin-bottom:32px;
+    }
+    .project-category h3{
+      font-size:20px;font-weight:600;margin-bottom:16px;color:var(--highlight);
+    }
+    .participation{
+      font-size:13px;color:var(--muted);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);
+    }
+
     .projects{display:grid;gap:20px}
     .card{
       background:var(--bg-alt);
@@ -88,66 +127,176 @@
         </div>
       </div>
       <nav>
+        <a href="#apresentacao">Sobre</a>
+        <a href="#areas">Áreas</a>
         <a href="#projetos">Projetos</a>
+        <a href="#outras">Outras Info</a>
         <a href="#contato">Contato</a>
       </nav>
     </header>
 
+    <section id="apresentacao">
+      <div class="section-title">Apresentação Pessoal</div>
+      <div class="presentation">
+        <img src="unnamed.jpg" alt="Nicolas Aquino" class="photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="photo" style="display:none;align-items:center;justify-content:center;color:#fff;font-weight:600;">Foto pessoal</div>
+        <div class="presentation-text">
+          <h2>Nicolas José de Aquino</h2>
+          <p>
+            Estudante de Desenvolvimento de Software Multiplataforma na FATEC Jacareí, 
+            apaixonado por tecnologia e desenvolvimento de soluções inovadoras. 
+            Busco constantemente aprimorar minhas habilidades técnicas e trabalhar 
+            em projetos que agreguem valor e experiência prática.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas">
+      <div class="section-title">Áreas de Atuação</div>
+      <div class="areas">
+        <div class="area-card">
+          <h3>Desenvolvimento Frontend</h3>
+          <p>React, TypeScript, HTML, CSS, Tailwind CSS</p>
+        </div>
+        <div class="area-card">
+          <h3>Gestão de Projetos</h3>
+          <p>Scrum, Metodologias Ágeis, Gestão de Equipes</p>
+        </div>
+        <div class="area-card">
+          <h3>Desenvolvimento Full Stack</h3>
+          <p>Integração de APIs, Redux Toolkit, Arquitetura de Software</p>
+        </div>
+      </div>
+    </section>
+
     <section id="projetos">
       <div class="section-title">Projetos</div>
-      <div class="projects">
 
-        <article class="card">
-          <h3>HardStop — Aprendizado de Scrum</h3>
-          <p>Projeto acadêmico focado em vivenciar práticas ágeis e Scrum no desenvolvimento de software.</p>
-          <div class="chips">
-            <span class="chip">Scrum</span>
-            <span class="chip">Gestão Ágil</span>
-          </div>
-          <div class="links">
-            <a class="link github" href="https://github.com/Nickaqui/hardstop" target="_blank">GitHub</a>
-          </div>
-        </article>
+      <div class="project-category">
+        <h3>Projetos Acadêmicos</h3>
+        <div class="projects">
+          <article class="card">
+            <h3>HardStop — Aprendizado de Scrum</h3>
+            <p>Projeto acadêmico focado em vivenciar práticas ágeis e Scrum no desenvolvimento de software.</p>
+            <div class="participation">
+              <strong>Minha participação:</strong> Atuei como membro da equipe de desenvolvimento, 
+              participando ativamente das cerimônias Scrum (Daily, Sprint Planning, Retrospectiva) 
+              e contribuindo para o desenvolvimento das funcionalidades do projeto.
+            </div>
+            <div class="chips">
+              <span class="chip">Scrum</span>
+              <span class="chip">Gestão Ágil</span>
+            </div>
+            <div class="links">
+              <a class="link github" href="https://github.com/Nickaqui/hardstop" target="_blank">GitHub</a>
+            </div>
+          </article>
 
-        <article class="card">
-          <h3>VitalU — Nutrição & TMB</h3>
-          <p>Cálculo de TMB (Harris-Benedict), IMC e metas nutricionais.</p>
-          <div class="chips">
-            <span class="chip">React</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Redux Toolkit</span>
-          </div>
-          <div class="links">
-            <a class="link site" href="https://vital-u.vercel.app/" target="_blank">Site</a>
-            <a class="link github" href="https://github.com/Steel-Hard/VitalU" target="_blank">GitHub</a>
-          </div>
-        </article>
+          <article class="card">
+            <h3>VitalU — Nutrição & TMB</h3>
+            <p>Cálculo de TMB (Harris-Benedict), IMC e metas nutricionais.</p>
+            <div class="participation">
+              <strong>Minha participação:</strong> Desenvolvi componentes React com TypeScript, 
+              implementei a lógica de cálculo de TMB e IMC, e integrei o Redux Toolkit para 
+              gerenciamento de estado da aplicação.
+            </div>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Redux Toolkit</span>
+            </div>
+            <div class="links">
+              <a class="link site" href="https://vital-u.vercel.app/" target="_blank">Site</a>
+              <a class="link github" href="https://github.com/Steel-Hard/VitalU" target="_blank">GitHub</a>
+            </div>
+          </article>
 
-        <article class="card">
-          <h3>LabWind — Dashboard Meteorológico</h3>
-          <p>Dashboard para dados do Lago de Furnas com cards dinâmicos e alertas.</p>
-          <div class="chips">
-            <span class="chip">React</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip">Tailwind</span>
-          </div>
-          <div class="links">
-            <a class="link site" href="https://labwind.vercel.app/" target="_blank">Site</a>
-            <a class="link github" href="https://github.com/Steel-Hard/LabWind" target="_blank">GitHub</a>
-          </div>
-        </article>
+          <article class="card">
+            <h3>LabWind — Dashboard Meteorológico</h3>
+            <p>Dashboard para dados do Lago de Furnas com cards dinâmicos e alertas.</p>
+            <div class="participation">
+              <strong>Minha participação:</strong> Responsável pelo desenvolvimento da interface 
+              com React e TypeScript, criação dos componentes de cards dinâmicos, implementação 
+              do design responsivo com Tailwind CSS e integração com APIs de dados meteorológicos.
+            </div>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Tailwind</span>
+            </div>
+            <div class="links">
+              <a class="link site" href="https://labwind.vercel.app/" target="_blank">Site</a>
+              <a class="link github" href="https://github.com/Steel-Hard/LabWind" target="_blank">GitHub</a>
+            </div>
+          </article>
 
-        <article class="card">
-          <h3>Projeto 4° Semestre</h3>
-          <p>Projeto em desenvolvimento ao longo do 4° semestre, com previsão de publicação no fim do ano.</p>
-          <div class="chips">
-            <span class="chip">Em breve</span>
-          </div>
-          <div class="links">
-            <span class="link github soon">Em breve</span>
-          </div>
-        </article>
+          <article class="card">
+            <h3>VESTA — Detecção de Quedas para Idosos</h3>
+            <p>Sistema inteligente de detecção de quedas para idosos, composto por dispositivo vestível conectado via Wi-Fi a um aplicativo mobile. O sistema identifica automaticamente quedas e envia alertas imediatos por SMS para familiares ou cuidadores.</p>
+            <div class="participation">
+              <strong>Minha participação:</strong> Atuo como Product Owner do projeto, responsável pela definição de requisitos, priorização do backlog, coordenação da equipe de desenvolvimento e garantia de que o produto atenda às necessidades dos usuários. Participo ativamente das cerimônias Scrum e na tomada de decisões estratégicas do projeto.
+            </div>
+            <div class="chips">
+              <span class="chip">React Native</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">ESP32</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">MQTT</span>
+            </div>
+            <div class="links">
+              <a class="link github" href="https://github.com/Steel-Hard/VESTA" target="_blank">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
 
+      <div class="project-category">
+        <h3>Projetos Profissionais</h3>
+        <div class="projects">
+          <article class="card">
+            <h3>Controle de Estoque — Cura Cosméticos</h3>
+            <p>Sistema de controle de estoque desenvolvido para a empresa Cura Cosméticos, permitindo gestão eficiente de produtos, entrada e saída de mercadorias, controle de inventário e relatórios de movimentação.</p>
+            <div class="participation">
+              <strong>Minha participação:</strong> Desenvolvimento completo do sistema de controle de estoque, incluindo arquitetura da solução, implementação das funcionalidades de gestão de produtos, movimentações de entrada e saída, geração de relatórios e interface de usuário para facilitar o uso diário pela equipe.
+            </div>
+            <div class="chips">
+              <span class="chip">Sistema Web</span>
+              <span class="chip">Controle de Estoque</span>
+            </div>
+            <div class="links">
+              <a class="link github" href="https://github.com/Nickaqui/controle-de-estoque" target="_blank">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3>Projetos Pessoais</h3>
+        <div class="projects">
+          <article class="card">
+            <p style="color:var(--muted);font-style:italic;">Nenhum projeto pessoal adicionado ainda.</p>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="outras">
+      <div class="section-title">Outras Informações</div>
+      <div class="other-info">
+        <p>
+          <strong>Formação:</strong> Cursando Desenvolvimento de Software Multiplataforma na FATEC Jacareí (1° Semestre de 2024).
+        </p>
+        <p>
+          <strong>Interesses:</strong> Desenvolvimento web moderno, metodologias ágeis, arquitetura de software e 
+          tecnologias emergentes no ecossistema JavaScript/TypeScript.
+        </p>
+        <p>
+          <strong>Objetivos:</strong> Continuar aprimorando habilidades técnicas, contribuir para projetos open source 
+          e buscar oportunidades de crescimento profissional na área de desenvolvimento de software.
+        </p>
       </div>
     </section>
 
@@ -158,7 +307,6 @@
         <div class="social">
           <a href="https://github.com/Nickaqui" target="_blank">GitHub</a>
           <a href="https://www.linkedin.com/in/nicolas-aquino" target="_blank">LinkedIn</a>
-          <a href="mailto:nicolasjdeaquino@hotmail.com">E-mail</a>
         </div>
       </footer>
     </section>
