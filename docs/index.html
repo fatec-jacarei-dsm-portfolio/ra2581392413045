@@ -5,145 +5,460 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <base href="https://fatec-jacarei-dsm-portfolio.github.io/ra2581392413045/">
   <title>Portfólio – Nicolas Aquino</title>
-  <meta name="description" content="Portfólio acadêmico – projetos da faculdade" />
+  <meta name="description" content="Portfólio acadêmico e profissional – Nicolas Aquino" />
   <style>
-    :root{
-      --bg:#0C2E3F;
-      --bg-alt:#0f3549;
-      --text:#eaf2f6;
-      --muted:#8fa9b7;
-      --brand:#5D84A1;
-      --highlight:#5580B5;
-      --line:#17475f;
+    :root {
+      --bg: #0C2E3F;
+      --bg-alt: #0f3549;
+      --text: #eaf2f6;
+      --muted: #8fa9b7;
+      --brand: #5D84A1;
+      --highlight: #5580B5;
+      --highlight-hover: #3b6b9e;
+      --line: #17475f;
+      --btn-bg: rgba(255, 255, 255, 0.07);
+      --btn-border: #1e5572;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Inter", system-ui, sans-serif;
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    .container{max-width:960px;margin:0 auto;padding:32px}
-
-    header{
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:40px;
+    html {
+      scroll-behavior: smooth;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
     }
-    .logo{
-      width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--brand),var(--highlight));
-      font-weight:700;font-size:20px;color:#fff;
-    }
-    h1{font-size:28px;font-weight:700}
-    .subtitle{font-size:14px;color:var(--muted)}
-
-    nav a{
-      color:var(--text);text-decoration:none;margin-left:20px;font-weight:500;transition:.2s;
-    }
-    nav a:hover{color:var(--highlight)}
-
-    .section-title{
-      font-size:18px;font-weight:600;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:6px;
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
     }
 
-    .presentation{
-      display:flex;gap:24px;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;
+    /* HEADER */
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
     }
-    .photo{
-      width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid var(--line);
-      background:linear-gradient(135deg,var(--brand),var(--highlight));
-      display:block;
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
-    .presentation-text{
-      flex:1;min-width:250px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    .presentation-text h2{font-size:24px;margin-bottom:12px}
-    .presentation-text p{color:var(--muted);line-height:1.8}
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--highlight));
+      font-weight: 700;
+      font-size: 22px;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(85, 128, 181, 0.25);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+    }
 
-    .areas{
-      display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;margin-bottom:40px;
+    /* Header Actions: Socials & Language Switcher */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .area-card{
-      background:var(--bg-alt);border:1px solid var(--line);border-radius:12px;padding:16px;
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-border);
+      padding: 7px 13px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
     }
-    .area-card h3{font-size:16px;margin-bottom:8px;color:var(--highlight)}
-    .area-card p{color:var(--muted);font-size:14px;line-height:1.6}
+    .social-btn:hover {
+      background: var(--highlight);
+      border-color: var(--highlight);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .social-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
 
-    .other-info{
-      background:var(--bg-alt);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:40px;
+    /* Language Switcher */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-alt);
+      border: 1px solid var(--btn-border);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 2px;
     }
-    .other-info p{color:var(--muted);line-height:1.8;margin-bottom:12px}
-    .other-info p:last-child{margin-bottom:0}
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      letter-spacing: 0.05em;
+    }
+    .lang-btn.active {
+      background: var(--highlight);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .lang-btn:hover:not(.active) {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-    .project-category{
-      margin-bottom:32px;
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .project-category h3{
-      font-size:20px;font-weight:600;margin-bottom:16px;color:var(--highlight);
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      position: relative;
     }
-    .participation{
-      font-size:13px;color:var(--muted);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);
+    nav a:hover {
+      color: var(--highlight);
     }
 
-    .projects{display:grid;gap:20px}
-    .card{
-      background:var(--bg-alt);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:20px;
-      transition:transform .2s ease, border-color .2s ease;
+    /* SECTIONS */
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .card:hover{transform:translateY(-3px);border-color:var(--highlight)}
-    .card h3{margin-bottom:6px;font-size:20px;font-weight:600}
-    .card p{color:var(--muted);font-size:14px;margin-bottom:14px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-    .chip{background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:500}
-    .links{display:flex;gap:12px}
-    .link{padding:8px 14px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:.2s}
-    .site{background:var(--highlight);color:#fff}
-    .site:hover{background:#3b6b9e}
-    .github{border:1px solid var(--highlight);color:var(--highlight)}
-    .github:hover{background:var(--highlight);color:#fff}
-    .soon{opacity:.6;cursor:not-allowed}
 
-    footer{
-      margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
-      display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px
+    /* Presentation */
+    .presentation {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 45px;
+      flex-wrap: wrap;
     }
-    .social{display:flex;gap:12px}
-    .social a{color:var(--text);text-decoration:none;font-size:14px;border:1px solid var(--line);padding:6px 10px;border-radius:8px;transition:.2s}
-    .social a:hover{border-color:var(--highlight);color:var(--highlight)}
+    .photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid var(--line);
+      background: linear-gradient(135deg, var(--brand), var(--highlight));
+      display: block;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    .presentation-text {
+      flex: 1;
+      min-width: 260px;
+    }
+    .presentation-text h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .presentation-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* Areas */
+    .areas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 45px;
+    }
+    .area-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .area-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-2px);
+    }
+    .area-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--highlight);
+    }
+    .area-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Other Info */
+    .other-info {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 45px;
+    }
+    .other-info p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .other-info p:last-child {
+      margin-bottom: 0;
+    }
+    .other-info strong {
+      color: var(--text);
+    }
+
+    /* Projects */
+    .project-category {
+      margin-bottom: 36px;
+    }
+    .project-category h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--highlight);
+    }
+    .projects {
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--highlight);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .card h3 {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .card-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(85, 128, 181, 0.2);
+      color: #8bb3e8;
+      border: 1px solid rgba(85, 128, 181, 0.4);
+    }
+    .card-badge.badge-dev {
+      background: rgba(234, 179, 8, 0.15);
+      color: #facc15;
+      border-color: rgba(234, 179, 8, 0.35);
+    }
+    .card p.card-desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .participation {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      border-left: 3px solid var(--highlight);
+      line-height: 1.6;
+    }
+    .participation strong {
+      color: var(--text);
+    }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .chip {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #d1e4ee;
+    }
+    .links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .link {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .site {
+      background: var(--highlight);
+      color: #fff;
+    }
+    .site:hover {
+      background: var(--highlight-hover);
+    }
+    .github-link {
+      border: 1px solid var(--highlight);
+      color: var(--highlight);
+      background: transparent;
+    }
+    .github-link:hover {
+      background: var(--highlight);
+      color: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 680px) {
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .presentation {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .presentation-text {
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">
-        <div class="logo">N</div>
-        <div>
-          <h1>Nicolas Aquino</h1>
-          <div class="subtitle">Portfólio Acadêmico • DSM – FATEC Jacareí</div>
+      <div class="header-top">
+        <div class="brand">
+          <div class="logo">N</div>
+          <div>
+            <h1 data-i18n="name">Nicolas Aquino</h1>
+            <div class="subtitle" data-i18n="headerSubtitle">Portfólio Acadêmico • DSM – FATEC Jacareí</div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a class="social-btn" href="https://github.com/Nickaqui" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a class="social-btn" href="https://linkedin.com/in/nicolas-jose-de-aquino" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.62 1.62 0 1 0 0-3.24 1.62 1.62 0 0 0 0 3.24M7.86 18.5v-8.37H5.07v8.37h2.79z"></path>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <div class="lang-switcher" role="group" aria-label="Seletor de idioma">
+            <button class="lang-btn active" id="btn-pt" onclick="setLanguage('pt')">PT</button>
+            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+          </div>
         </div>
       </div>
+
       <nav>
-        <a href="#apresentacao">Sobre</a>
-        <a href="#areas">Áreas</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#outras">Outras Info</a>
-        <a href="#contato">Contato</a>
+        <a href="#apresentacao" data-i18n="navAbout">Sobre</a>
+        <a href="#areas" data-i18n="navAreas">Áreas</a>
+        <a href="#projetos" data-i18n="navProjects">Projetos</a>
+        <a href="#outras" data-i18n="navOther">Outras Info</a>
       </nav>
     </header>
 
+    <!-- APRESENTAÇÃO -->
     <section id="apresentacao">
-      <div class="section-title">Apresentação Pessoal</div>
+      <div class="section-title" data-i18n="sectionAbout">Apresentação Pessoal</div>
       <div class="presentation">
         <img src="unnamed.jpg" alt="Nicolas Aquino" class="photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="photo" style="display:none;align-items:center;justify-content:center;color:#fff;font-weight:600;">Foto pessoal</div>
+        <div class="photo" style="display:none;align-items:center;justify-content:center;color:#fff;font-weight:600;" data-i18n="photoFallback">Foto pessoal</div>
         <div class="presentation-text">
-          <h2>Nicolas José de Aquino</h2>
-          <p>
+          <h2 data-i18n="fullName">Nicolas José de Aquino</h2>
+          <p data-i18n="aboutText">
             Estudante de Desenvolvimento de Software Multiplataforma na FATEC Jacareí, 
             apaixonado por tecnologia e desenvolvimento de soluções inovadoras. 
             Busco constantemente aprimorar minhas habilidades técnicas e trabalhar 
@@ -153,90 +468,108 @@
       </div>
     </section>
 
+    <!-- ÁREAS DE ATUAÇÃO -->
     <section id="areas">
-      <div class="section-title">Áreas de Atuação</div>
+      <div class="section-title" data-i18n="sectionAreas">Áreas de Atuação</div>
       <div class="areas">
         <div class="area-card">
-          <h3>Desenvolvimento Frontend</h3>
-          <p>React, TypeScript, HTML, CSS, Tailwind CSS</p>
+          <h3 data-i18n="areaFrontTitle">Desenvolvimento Frontend</h3>
+          <p data-i18n="areaFrontDesc">React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS</p>
         </div>
         <div class="area-card">
-          <h3>Gestão de Projetos</h3>
-          <p>Scrum, Metodologias Ágeis, Gestão de Equipes</p>
+          <h3 data-i18n="areaMgmtTitle">Gestão de Projetos</h3>
+          <p data-i18n="areaMgmtDesc">Scrum, Metodologias Ágeis, Product Ownership, Gestão de Equipes</p>
         </div>
         <div class="area-card">
-          <h3>Desenvolvimento Full Stack</h3>
-          <p>Integração de APIs, Redux Toolkit, Arquitetura de Software</p>
+          <h3 data-i18n="areaFullTitle">Desenvolvimento Full Stack</h3>
+          <p data-i18n="areaFullDesc">Node.js, Express, MongoDB, MySQL, PostgreSQL, Integração de APIs, Redux Toolkit</p>
         </div>
       </div>
     </section>
 
+    <!-- PROJETOS -->
     <section id="projetos">
-      <div class="section-title">Projetos</div>
+      <div class="section-title" data-i18n="sectionProjects">Projetos</div>
 
       <div class="project-category">
-        <h3>Projetos Acadêmicos</h3>
+        <h3 data-i18n="catAcademic">Projetos Acadêmicos</h3>
         <div class="projects">
+
+          <!-- ProconChat_Jacarei (Em Desenvolvimento) -->
           <article class="card">
-            <h3>HardStop — Aprendizado de Scrum</h3>
-            <p>Projeto acadêmico focado em vivenciar práticas ágeis e Scrum no desenvolvimento de software.</p>
+            <div class="card-header">
+              <h3 data-i18n="proconTitle">ProconChat Jacareí — Chatbot para Orientação ao Consumidor via WhatsApp</h3>
+              <span class="card-badge badge-dev" data-i18n="proconBadge">Em desenvolvimento • 6º Semestre</span>
+            </div>
+            <p class="card-desc" data-i18n="proconDesc">
+              Projeto acadêmico do 6º semestre em parceria com a Fundação PROCON Jacareí para desenvolvimento de um chatbot inteligente integrado à WhatsApp Business Cloud API. Orienta cidadãos sobre direitos do consumidor, procedimentos de reclamação, prazos e documentos via fluxos estruturados e LLM, permitindo também agendamento presencial e painel de gestão.
+            </p>
             <div class="participation">
-              <strong>Minha participação:</strong> Atuei como membro da equipe de desenvolvimento, 
-              participando ativamente das cerimônias Scrum (Daily, Sprint Planning, Retrospectiva) 
-              e contribuindo para o desenvolvimento das funcionalidades do projeto.
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="proconParticipation">
+                Atuação no desenvolvimento da solução: arquitetura e estruturação dos fluxos conversacionais do chatbot, integração de APIs, serviços de backend e aplicação das diretrizes da LGPD no tratamento dos dados dos cidadãos.
+              </span>
             </div>
             <div class="chips">
-              <span class="chip">Scrum</span>
-              <span class="chip">Gestão Ágil</span>
+              <span class="chip">WhatsApp Business API</span>
+              <span class="chip">Chatbot</span>
+              <span class="chip">LLM</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Python</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Git</span>
             </div>
             <div class="links">
-              <a class="link github" href="https://github.com/Nickaqui/hardstop" target="_blank">GitHub</a>
+              <a class="link github-link" href="https://github.com/Steel-Hard/ProconChat_Jacarei" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </article>
 
+          <!-- Kicker_IQ -->
           <article class="card">
-            <h3>VitalU — Nutrição & TMB</h3>
-            <p>Cálculo de TMB (Harris-Benedict), IMC e metas nutricionais.</p>
+            <div class="card-header">
+              <h3 data-i18n="kickerTitle">Kicker_IQ — Monitoramento e Desempenho Físico de Atletas</h3>
+              <span class="card-badge" data-i18n="badgeFeatured">Destaque • Machine Learning</span>
+            </div>
+            <p class="card-desc" data-i18n="kickerDesc">
+              Sistema inteligente de apoio à tomada de decisão para comissões técnicas no futebol. Utiliza técnicas de machine learning para analisar grandes volumes de dados históricos e métricas físicas de jogadores, gerando relatórios de desempenho, predição de perfil e alertas preditivos.
+            </p>
             <div class="participation">
-              <strong>Minha participação:</strong> Desenvolvi componentes React com TypeScript, 
-              implementei a lógica de cálculo de TMB e IMC, e integrei o Redux Toolkit para 
-              gerenciamento de estado da aplicação.
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="kickerParticipation">
+                Atuei no desenvolvimento Full Stack da aplicação: no frontend, realizei a integração do Design System (Figma), telas de Login e Importação e o módulo completo de Alertas com filtros dinâmicos e modais; no backend, desenvolvi a modelagem da entidade de Alertas em MongoDB com arquitetura Controller/Service e rotas CRUD autenticadas com JWT.
+              </span>
             </div>
             <div class="chips">
+              <span class="chip">Next.js</span>
               <span class="chip">React</span>
               <span class="chip">TypeScript</span>
-              <span class="chip">Redux Toolkit</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">JWT</span>
+              <span class="chip">Python</span>
+              <span class="chip">Machine Learning</span>
+              <span class="chip">Docker</span>
             </div>
             <div class="links">
-              <a class="link site" href="https://vital-u.vercel.app/" target="_blank">Site</a>
-              <a class="link github" href="https://github.com/Steel-Hard/VitalU" target="_blank">GitHub</a>
+              <a class="link github-link" href="https://github.com/Steel-Hard/Kicker_IQ" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </article>
 
+          <!-- VESTA -->
           <article class="card">
-            <h3>LabWind — Dashboard Meteorológico</h3>
-            <p>Dashboard para dados do Lago de Furnas com cards dinâmicos e alertas.</p>
+            <div class="card-header">
+              <h3 data-i18n="vestaTitle">VESTA — Detecção de Quedas para Idosos</h3>
+              <span class="card-badge">IoT • Mobile</span>
+            </div>
+            <p class="card-desc" data-i18n="vestaDesc">
+              Sistema inteligente de detecção de quedas para idosos, composto por dispositivo vestível conectado via Wi-Fi a um aplicativo mobile. O sistema identifica automaticamente quedas e envia alertas imediatos para cuidadores e familiares cadastrados.
+            </p>
             <div class="participation">
-              <strong>Minha participação:</strong> Fui Responsável pelo desenvolvimento da interface 
-              com React e TypeScript, criação dos componentes de cards dinâmicos, implementação 
-              do design responsivo com Tailwind CSS e integração com APIs de dados meteorológicos.
-            </div>
-            <div class="chips">
-              <span class="chip">React</span>
-              <span class="chip">TypeScript</span>
-              <span class="chip">Tailwind</span>
-            </div>
-            <div class="links">
-              <a class="link site" href="https://labwind.vercel.app/" target="_blank">Site</a>
-              <a class="link github" href="https://github.com/Steel-Hard/LabWind" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>VESTA — Detecção de Quedas para Idosos</h3>
-            <p>Sistema inteligente de detecção de quedas para idosos, composto por dispositivo vestível conectado via Wi-Fi a um aplicativo mobile. O sistema identifica automaticamente quedas e env[...]
-            <div class="participation">
-              <strong>Minha participação:</strong> Atuei como Product Owner do projeto, responsável pela definição de requisitos, priorização do backlog, coordenação da equipe de desenvolvime[...]
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="vestaParticipation">
+                Atuei como Product Owner do projeto, responsável pela definição de requisitos, priorização do backlog, coordenação da equipe de desenvolvimento e alinhamento das entregas em sprints com o cliente e stakeholders.
+              </span>
             </div>
             <div class="chips">
               <span class="chip">React Native</span>
@@ -247,74 +580,331 @@
               <span class="chip">MQTT</span>
             </div>
             <div class="links">
-              <a class="link github" href="https://github.com/Steel-Hard/VESTA" target="_blank">GitHub</a>
+              <a class="link github-link" href="https://github.com/Steel-Hard/VESTA" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </article>
-        </div>
-      </div>
 
-      <div class="project-category">
-        <h3>Projetos Profissionais</h3>
-        <div class="projects">
+          <!-- LabWind -->
           <article class="card">
-            <h3>Controle de Estoque — Cura Cosméticos</h3>
-            <p>Sistema de controle de estoque desenvolvido para a empresa Cura Cosméticos, permitindo gestão eficiente de produtos, entrada e saída de mercadorias, controle de inventário e relató[...]
+            <div class="card-header">
+              <h3 data-i18n="labwindTitle">LabWind — Dashboard Meteorológico</h3>
+              <span class="card-badge">Web • Dashboard</span>
+            </div>
+            <p class="card-desc" data-i18n="labwindDesc">
+              Dashboard para dados e métricas meteorológicas da região do Lago de Furnas com cards dinâmicos e alertas em tempo real.
+            </p>
             <div class="participation">
-              <strong>Minha participação:</strong> Desenvolvi um completo do sistema de controle de estoque, incluindo arquitetura da solução, implementação das funcionalidades de gestão de pro[...]
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="labwindParticipation">
+                Fui responsável pelo desenvolvimento da interface com React e TypeScript, criação dos componentes de cards dinâmicos, implementação do design responsivo com Tailwind CSS e integração com APIs de dados meteorológicos.
+              </span>
             </div>
             <div class="chips">
-              <span class="chip">Sistema Web</span>
-              <span class="chip">Controle de Estoque</span>
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Tailwind CSS</span>
             </div>
             <div class="links">
-              <a class="link github" href="https://github.com/Nickaqui/controle-de-estoque" target="_blank">GitHub</a>
+              <a class="link site" href="https://labwind.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btnSite">Site</a>
+              <a class="link github-link" href="https://github.com/Steel-Hard/LabWind" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <!-- VitalU -->
+          <article class="card">
+            <div class="card-header">
+              <h3 data-i18n="vitaluTitle">VitalU — Nutrição & TMB</h3>
+              <span class="card-badge">Web App</span>
+            </div>
+            <p class="card-desc" data-i18n="vitaluDesc">
+              Aplicação de cálculo de Taxa Metabólica Basal (fórmula Harris-Benedict), IMC e acompanhamento de metas nutricionais.
+            </p>
+            <div class="participation">
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="vitaluParticipation">
+                Desenvolvi componentes React com TypeScript, implementei a lógica de cálculo de TMB e IMC, e integrei o Redux Toolkit para gerenciamento de estado da aplicação.
+              </span>
+            </div>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Redux Toolkit</span>
+            </div>
+            <div class="links">
+              <a class="link site" href="https://vital-u.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btnSite">Site</a>
+              <a class="link github-link" href="https://github.com/Steel-Hard/VitalU" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <!-- HardStop -->
+          <article class="card">
+            <div class="card-header">
+              <h3 data-i18n="hardstopTitle">HardStop — Aprendizado de Scrum</h3>
+              <span class="card-badge">Agile • Scrum</span>
+            </div>
+            <p class="card-desc" data-i18n="hardstopDesc">
+              Projeto acadêmico focado em vivenciar práticas ágeis e o framework Scrum no desenvolvimento prático de software.
+            </p>
+            <div class="participation">
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="hardstopParticipation">
+                Atuei como membro da equipe de desenvolvimento, participando ativamente das cerimônias Scrum (Daily, Sprint Planning, Retrospectiva) e contribuindo para o desenvolvimento das funcionalidades do projeto.
+              </span>
+            </div>
+            <div class="chips">
+              <span class="chip">Scrum</span>
+              <span class="chip">Gestão Ágil</span>
+            </div>
+            <div class="links">
+              <a class="link github-link" href="https://github.com/Nickaqui/hardstop" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Projetos Profissionais -->
+      <div class="project-category">
+        <h3 data-i18n="catProfessional">Projetos Profissionais</h3>
+        <div class="projects">
+          <article class="card">
+            <div class="card-header">
+              <h3 data-i18n="estoqueTitle">Controle de Estoque — Cura Cosméticos</h3>
+              <span class="card-badge" data-i18n="badgeCommercial">Comercial • Produção</span>
+            </div>
+            <p class="card-desc" data-i18n="estoqueDesc">
+              Sistema de controle de estoque desenvolvido para a empresa Cura Cosméticos, permitindo gestão eficiente de produtos, entrada e saída de mercadorias, controle de inventário e relatórios detalhados.
+            </p>
+            <div class="participation">
+              <strong data-i18n="labelParticipation">Minha participação:</strong>
+              <span data-i18n="estoqueParticipation">
+                Desenvolvi a solução completa do sistema de controle de estoque, incluindo arquitetura da solução, implementação das funcionalidades de gestão de produtos, movimentação de estoque e persistência de dados.
+              </span>
+            </div>
+            <div class="chips">
+              <span class="chip" data-i18n="chipWebSystem">Sistema Web</span>
+              <span class="chip" data-i18n="chipInventory">Controle de Estoque</span>
+              <span class="chip">Full Stack</span>
+            </div>
+            <div class="links">
+              <a class="link github-link" href="https://github.com/Nickaqui/controle-de-estoque" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </article>
         </div>
       </div>
 
+      <!-- Projetos Pessoais -->
       <div class="project-category">
-        <h3>Projetos Pessoais</h3>
+        <h3 data-i18n="catPersonal">Projetos Pessoais</h3>
         <div class="projects">
           <article class="card">
-            <p style="color:var(--muted);font-style:italic;">Nenhum projeto pessoal adicionado ainda.</p>
+            <p style="color:var(--muted);font-style:italic;" data-i18n="noPersonalProjects">Em breve novos projetos pessoais serão adicionados aqui.</p>
           </article>
         </div>
       </div>
 
     </section>
 
+    <!-- OUTRAS INFORMAÇÕES -->
     <section id="outras">
-      <div class="section-title">Outras Informações</div>
+      <div class="section-title" data-i18n="sectionOther">Outras Informações</div>
       <div class="other-info">
         <p>
-          <strong>Formação:</strong> Cursando Desenvolvimento de Software Multiplataforma na FATEC Jacareí (No Inicio do 1° Semestre de 2024).
+          <strong data-i18n="labelEducation">Formação:</strong>
+          <span data-i18n="textEducation">Cursando Desenvolvimento de Software Multiplataforma na FATEC Jacareí (Início em 2024).</span>
         </p>
         <p>
-          <strong>Interesses:</strong> Desenvolvimento web moderno, metodologias ágeis, arquitetura de software e 
-          tecnologias emergentes no ecossistema JavaScript/TypeScript, React, Node.
+          <strong data-i18n="labelInterests">Interesses:</strong>
+          <span data-i18n="textInterests">Desenvolvimento web moderno, inteligência artificial, metodologias ágeis, arquitetura de software e tecnologias emergentes no ecossistema JavaScript/TypeScript, React, Node.js e Python.</span>
         </p>
         <p>
-          <strong>Objetivos:</strong> Continuar aprimorando habilidades técnicas, contribuir para projetos open source 
-          e buscar oportunidades de crescimento profissional na área de desenvolvimento de software.
+          <strong data-i18n="labelGoals">Objetivos:</strong>
+          <span data-i18n="textGoals">Continuar aprimorando habilidades técnicas, contribuir para projetos inovadores e buscar oportunidades de crescimento profissional na área de desenvolvimento de software.</span>
         </p>
       </div>
     </section>
 
-    <section id="contato">
-      <div class="section-title">Contato</div>
-      <footer>
-        <small>© <span id="year"></span> Nicolas Aquino</small>
-        <div class="social">
-          <a href="https://github.com/Nickaqui" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/nicolas-jose-de-aquino" target="_blank">LinkedIn</a>
-        </div>
-      </footer>
-    </section>
+    <!-- RODAPÉ -->
+    <footer>
+      <small>© <span id="year"></span> Nicolas Aquino. <span data-i18n="footerRights">Todos os direitos reservados.</span></small>
+    </footer>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Dicionário de traduções (PT / EN)
+    const translations = {
+      pt: {
+        name: "Nicolas Aquino",
+        headerSubtitle: "Portfólio Acadêmico • DSM – FATEC Jacareí",
+        navAbout: "Sobre",
+        navAreas: "Áreas",
+        navProjects: "Projetos",
+        navOther: "Outras Info",
+        sectionAbout: "Apresentação Pessoal",
+        photoFallback: "Foto pessoal",
+        fullName: "Nicolas José de Aquino",
+        aboutText: "Estudante de Desenvolvimento de Software Multiplataforma na FATEC Jacareí, apaixonado por tecnologia e desenvolvimento de soluções inovadoras. Busco constantemente aprimorar minhas habilidades técnicas e trabalhar em projetos que agreguem valor e experiência prática.",
+        sectionAreas: "Áreas de Atuação",
+        areaFrontTitle: "Desenvolvimento Frontend",
+        areaFrontDesc: "React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS",
+        areaMgmtTitle: "Gestão de Projetos",
+        areaMgmtDesc: "Scrum, Metodologias Ágeis, Product Ownership, Gestão de Equipes",
+        areaFullTitle: "Desenvolvimento Full Stack",
+        areaFullDesc: "Node.js, Express, MongoDB, MySQL, PostgreSQL, Integração de APIs, Redux Toolkit",
+        sectionProjects: "Projetos",
+        catAcademic: "Projetos Acadêmicos",
+        proconTitle: "ProconChat Jacareí — Chatbot para Orientação ao Consumidor via WhatsApp",
+        proconBadge: "Em desenvolvimento • 6º Semestre",
+        proconDesc: "Projeto acadêmico do 6º semestre em parceria com a Fundação PROCON Jacareí para desenvolvimento de um chatbot inteligente integrado à WhatsApp Business Cloud API. Orienta cidadãos sobre direitos do consumidor, procedimentos de reclamação, prazos e documentos via fluxos estruturados e LLM, permitindo também agendamento presencial e painel de gestão.",
+        proconParticipation: "Atuação no desenvolvimento da solução: arquitetura e estruturação dos fluxos conversacionais do chatbot, integração de APIs, serviços de backend e aplicação das diretrizes da LGPD no tratamento dos dados dos cidadãos.",
+        badgeFeatured: "Destaque • Machine Learning",
+        kickerTitle: "Kicker_IQ — Monitoramento e Desempenho Físico de Atletas",
+        kickerDesc: "Sistema inteligente de apoio à tomada de decisão para comissões técnicas no futebol. Utiliza técnicas de machine learning para analisar grandes volumes de dados históricos e métricas físicas de jogadores, gerando relatórios de desempenho, predição de perfil e alertas preditivos.",
+        kickerParticipation: "Atuei no desenvolvimento Full Stack da aplicação: no frontend, realizei a integração do Design System (Figma), telas de Login e Importação e o módulo completo de Alertas com filtros dinâmicos e modais; no backend, desenvolvi a modelagem da entidade de Alertas em MongoDB com arquitetura Controller/Service e rotas CRUD autenticadas com JWT.",
+        vestaTitle: "VESTA — Detecção de Quedas para Idosos",
+        vestaDesc: "Sistema inteligente de detecção de quedas para idosos, composto por dispositivo vestível conectado via Wi-Fi a um aplicativo mobile. O sistema identifica automaticamente quedas e envia alertas imediatos para cuidadores e familiares cadastrados.",
+        vestaParticipation: "Atuei como Product Owner do projeto, responsável pela definição de requisitos, priorização do backlog, coordenação da equipe de desenvolvimento e alinhamento das entregas em sprints com o cliente e stakeholders.",
+        labwindTitle: "LabWind — Dashboard Meteorológico",
+        labwindDesc: "Dashboard para dados e métricas meteorológicas da região do Lago de Furnas com cards dinâmicos e alertas em tempo real.",
+        labwindParticipation: "Fui responsável pelo desenvolvimento da interface com React e TypeScript, criação dos componentes de cards dinâmicos, implementação do design responsivo com Tailwind CSS e integração com APIs de dados meteorológicos.",
+        vitaluTitle: "VitalU — Nutrição & TMB",
+        vitaluDesc: "Aplicação de cálculo de Taxa Metabólica Basal (fórmula Harris-Benedict), IMC e acompanhamento de metas nutricionais.",
+        vitaluParticipation: "Desenvolvi componentes React com TypeScript, implementei a lógica de cálculo de TMB e IMC, e integrei o Redux Toolkit para gerenciamento de estado da aplicação.",
+        hardstopTitle: "HardStop — Aprendizado de Scrum",
+        hardstopDesc: "Projeto acadêmico focado em vivenciar práticas ágeis e o framework Scrum no desenvolvimento prático de software.",
+        hardstopParticipation: "Atuei como membro da equipe de desenvolvimento, participando ativamente das cerimônias Scrum (Daily, Sprint Planning, Retrospectiva) e contribuindo para o desenvolvimento das funcionalidades do projeto.",
+        catProfessional: "Projetos Profissionais",
+        badgeCommercial: "Comercial • Produção",
+        estoqueTitle: "Controle de Estoque — Cura Cosméticos",
+        estoqueDesc: "Sistema de controle de estoque desenvolvido para a empresa Cura Cosméticos, permitindo gestão eficiente de produtos, entrada e saída de mercadorias, controle de inventário e relatórios detalhados.",
+        estoqueParticipation: "Desenvolvi a solução completa do sistema de controle de estoque, incluindo arquitetura da solução, implementação das funcionalidades de gestão de produtos, movimentação de estoque e persistência de dados.",
+        chipWebSystem: "Sistema Web",
+        chipInventory: "Controle de Estoque",
+        catPersonal: "Projetos Pessoais",
+        noPersonalProjects: "Em breve novos projetos pessoais serão adicionados aqui.",
+        sectionOther: "Outras Informações",
+        labelEducation: "Formação:",
+        textEducation: "Cursando Desenvolvimento de Software Multiplataforma na FATEC Jacareí (Início em 2024).",
+        labelInterests: "Interesses:",
+        textInterests: "Desenvolvimento web moderno, inteligência artificial, metodologias ágeis, arquitetura de software e tecnologias emergentes no ecossistema JavaScript/TypeScript, React, Node.js e Python.",
+        labelGoals: "Objetivos:",
+        textGoals: "Continuar aprimorando habilidades técnicas, contribuir para projetos inovadores e buscar oportunidades de crescimento profissional na área de desenvolvimento de software.",
+        footerRights: "Todos os direitos reservados.",
+        labelParticipation: "Minha participação:",
+        btnSite: "Site"
+      },
+      en: {
+        name: "Nicolas Aquino",
+        headerSubtitle: "Academic Portfolio • Multiplatform Software Dev – FATEC Jacareí",
+        navAbout: "About",
+        navAreas: "Expertise",
+        navProjects: "Projects",
+        navOther: "More Info",
+        sectionAbout: "About Me",
+        photoFallback: "Personal Photo",
+        fullName: "Nicolas José de Aquino",
+        aboutText: "Multiplatform Software Development undergraduate at FATEC Jacareí, passionate about technology and building innovative solutions. Constantly looking to advance my technical capabilities and work on high-impact projects that deliver practical, real-world value.",
+        sectionAreas: "Areas of Expertise",
+        areaFrontTitle: "Frontend Development",
+        areaFrontDesc: "React, Next.js, TypeScript, HTML5, CSS3, Tailwind CSS",
+        areaMgmtTitle: "Project Management",
+        areaMgmtDesc: "Scrum, Agile Methodologies, Product Ownership, Team Coordination",
+        areaFullTitle: "Full Stack Development",
+        areaFullDesc: "Node.js, Express, MongoDB, MySQL, PostgreSQL, API Integration, Redux Toolkit",
+        sectionProjects: "Projects",
+        catAcademic: "Academic Projects",
+        proconTitle: "ProconChat Jacareí — WhatsApp Consumer Advisory Chatbot",
+        proconBadge: "In Development • 6th Semester",
+        proconDesc: "6th-semester academic initiative in partnership with PROCON Jacareí building an intelligent chatbot on WhatsApp Business Cloud API. Guides citizens on consumer rights, claim filing, deadlines, and documentation via structured flows and LLM, including in-person appointment scheduling and an admin dashboard.",
+        proconParticipation: "Contributing to the end-to-end solution: designing conversational decision trees, API integrations, backend service architecture, and ensuring LGPD compliance across user data flows.",
+        badgeFeatured: "Featured • Machine Learning",
+        kickerTitle: "Kicker_IQ — Athlete Physical Performance & Analytics",
+        kickerDesc: "Intelligent decision-support system for football coaching staffs. Employs machine learning techniques to analyze historical player datasets and physical metrics, delivering performance reports, profiling, and predictive alerts.",
+        kickerParticipation: "Contributed as a Full Stack Developer: on the frontend, integrated the Figma Design System, built Login and Data Import screens, and delivered a complete Alerts module with dynamic filtering and modals; on the backend, designed and built the MongoDB Alert entity with Controller/Service architecture and JWT-authenticated CRUD routes.",
+        vestaTitle: "VESTA — Elderly Fall Detection System",
+        vestaDesc: "Intelligent fall detection platform for the elderly, combining a Wi-Fi-enabled wearable device with a mobile companion app. Automatically detects falls and triggers immediate notifications to registered family members and caregivers.",
+        vestaParticipation: "Served as Product Owner, responsible for requirements engineering, backlog prioritization, dev team management, and sprint deliverable alignment with clients and stakeholders.",
+        labwindTitle: "LabWind — Meteorological Dashboard",
+        labwindDesc: "Real-time weather metrics and monitoring dashboard for the Furnas Lake region, featuring dynamic cards and live threshold alerts.",
+        labwindParticipation: "Responsible for frontend development using React and TypeScript, crafting dynamic metric cards, implementing responsive layouts with Tailwind CSS, and integrating external meteorological APIs.",
+        vitaluTitle: "VitalU — Nutrition & BMR Calculator",
+        vitaluDesc: "Health and wellness web app calculating Basal Metabolic Rate (Harris-Benedict equation), BMI classification, and daily nutritional targets.",
+        vitaluParticipation: "Engineered React and TypeScript components, implemented BMR/BMI calculations, and incorporated Redux Toolkit for unified application state management.",
+        hardstopTitle: "HardStop — Scrum Learning Experience",
+        hardstopDesc: "Academic initiative focused on practical immersion in agile principles and the Scrum framework for software delivery.",
+        hardstopParticipation: "Active development team member participating in daily standups, sprint planning, and retrospectives while contributing code to core features.",
+        catProfessional: "Professional Projects",
+        badgeCommercial: "Commercial • Production",
+        estoqueTitle: "Inventory Management — Cura Cosméticos",
+        estoqueDesc: "Complete inventory control software tailored for Cura Cosméticos, enabling product management, stock entries and dispatches, inventory auditing, and analytical reports.",
+        estoqueParticipation: "Engineered the full inventory management solution, including system architecture, product tracking views, inventory movement logic, and persistent data storage.",
+        chipWebSystem: "Web Application",
+        chipInventory: "Inventory Control",
+        catPersonal: "Personal Projects",
+        noPersonalProjects: "New personal projects will be posted here soon.",
+        sectionOther: "Additional Information",
+        labelEducation: "Education:",
+        textEducation: "Undergraduate in Multiplatform Software Development at FATEC Jacareí (Started 2024).",
+        labelInterests: "Interests:",
+        textInterests: "Modern web engineering, artificial intelligence, agile leadership, software architecture, and emerging tools in the JavaScript/TypeScript, React, Node.js, and Python ecosystems.",
+        labelGoals: "Goals:",
+        textGoals: "Continuously enhance technical depth, collaborate on impactful tech products, and pursue software engineering career opportunities.",
+        footerRights: "All rights reserved.",
+        labelParticipation: "My role:",
+        btnSite: "Live Demo"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      
+      // Atualiza atributo lang do html
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US';
+
+      // Atualiza textos
+      const dict = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.textContent = dict[key];
+        }
+      });
+
+      // Atualiza botões
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      // Salva preferência no localStorage
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch(e) {}
+    }
+
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ano do footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Idioma salvo ou padrão
+      let savedLang = 'pt';
+      try {
+        savedLang = localStorage.getItem('portfolio_lang') || 'pt';
+      } catch(e) {}
+      setLanguage(savedLang);
+
+      // Suporte para navegação suave compatível com base href
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, targetId);
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
